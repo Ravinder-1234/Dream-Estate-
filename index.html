@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream Estate</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background: #0f172a;
+            color: #fff;
+        }
+        /* HEADER */
+        
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: #020617;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #38bdf8;
+        }
+        
+        nav {
+            display: flex;
+        }
+        
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        
+        .menu-toggle {
+            display: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+        /* HERO */
+        
+        .hero {
+            height: 100vh;
+            background: url("https://st.hzcdn.com/simgs/46214c9c0ab21a28_14-8411/_.jpg") center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        
+        .hero-content {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 30px;
+            border-radius: 10px;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .btn {
+            padding: 10px 20px;
+            background: #38bdf8;
+            color: #000;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        
+        section {
+            padding: 100px 40px;
+        }
+        /* ABOUT */
+        
+        .about-container {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .about img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+        }
+        /* GRID */
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .card {
+            background: #1e293b;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: .4s;
+        }
+        
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .card h3 {
+            padding: 15px;
+        }
+        /* TESTIMONIAL */
+        
+        .testimonial-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 20px;
+            padding: 20px 0;
+        }
+        
+        .testimonial {
+            min-width: 300px;
+            background: #1e293b;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        
+        .testimonial img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+        /* CONTACT */
+        
+        input,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+        }
+        
+        button {
+            padding: 10px 20px;
+            background: #38bdf8;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #020617;
+        }
+        /* MOBILE */
+        
+        @media(max-width:768px) {
+            nav {
+                display: none;
+                flex-direction: column;
+                background: #020617;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                width: 200px;
+            }
+            nav.active {
+                display: flex;
+            }
+            .menu-toggle {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">Dream Estate</div>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <nav id="navMenu">
+            <a href="#">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#properties">Properties</a>
+            <a href="#agents">Agents</a>
+            <a href="#reviews">Reviews</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Find Your Dream Home</h1>
+            <p>Discover the best properties with trusted real estate experts</p>
+            <a href="#properties" class="btn">Explore Properties</a>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="about">
+        <h2>About Us</h2>
+        <div class="about-container">
+            <img src="https://res.cloudinary.com/sentral/image/upload/w_1000,h_1000,q_auto:eco,c_fill/f_auto/v1684782440/miro_hero_building_exterior_2000x1125.jpg">
+            <p>We are a leading real estate company offering premium residential and commercial properties. Our mission is to help you find the perfect property with ease and trust. With years of experience, we provide expert guidance, verified listings,
+                and the best deals in the market.</p>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="grid">
+            <div class="card"><img src="https://cdn.home-designing.com/wp-content/uploads/2016/01/black-living-room-accent-colors.jpg">
+                <h3>Buy Property</h3>
+            </div>
+            <div class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzvbxO_GhNgiB9ARrjykYqhbIW_yqjKkXmMA&s">
+                <h3>Sell Property</h3>
+            </div>
+            <div class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiCSa9HRI6PRud_qEWkyhwNImyGN8oFaYVGQ&s">
+                <h3>Rent Property</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROPERTIES -->
+    <section id="properties">
+        <h2>Featured Properties</h2>
+        <div class="grid">
+            <div class="card"><img src="https://www.greenply.com:5001/originalfile1769165379328-6117.jpg">
+                <h3>Luxury Villa</h3>
+            </div>
+            <div class="card"><img src="https://images.stockcake.com/public/a/4/3/a43491d4-a238-457d-910b-17199d1bb59f_large/urban-green-building-stockcake.jpg">
+                <h3>Modern Apartment</h3>
+            </div>
+            <div class="card"><img src="https://img.freepik.com/premium-photo/luxurious-modern-office-with-city-view-night_1353244-12202.jpg">
+                <h3>Office Space</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- AGENTS -->
+    <section id="agents">
+        <h2>Our Agents</h2>
+        <div class="grid">
+            <div class="card"><img src="https://www.shutterstock.com/image-photo/property-manager-near-purchased-home-260nw-2733983353.jpg">
+                <h3>John Doe</h3>
+            </div>
+            <div class="card"><img src="https://t3.ftcdn.net/jpg/15/62/37/90/360_F_1562379068_rr1Rg91o40IsYnPCIYMX0XdeReAzfyXl.jpg">
+                <h3>Sarah Lee</h3>
+            </div>
+            <div class="card"><img src="https://t4.ftcdn.net/jpg/10/99/64/81/360_F_1099648155_VmPcacZv7wDIVmlqQRYZIXavkoozGr03.jpg">
+                <h3>Mike Ross</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIAL -->
+    <section id="reviews">
+        <h2>Customer Reviews</h2>
+        <div class="testimonial-container">
+            <div class="testimonial">
+                <img src="https://img.freepik.com/free-photo/smiling-blonde-girl-is-showing-perfect-gesture-blue-background_176474-119112.jpg?semt=ais_hybrid&w=740&q=80">
+                <p>"Amazing service and smooth process!"</p>
+            </div>
+            <div class="testimonial">
+                <img src="https://t3.ftcdn.net/jpg/06/50/56/80/360_F_650568058_q6KruAvlT4w7RahAGwIwgIY8ZjIkGAYg.jpg">
+                <p>"Found my dream home easily."</p>
+            </div>
+            <div class="testimonial">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUEYRnkRBLz_IlcdnSo9OwfOdnctl0J9DMTg&s">
+                <p>"Highly professional team."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form onsubmit="return submitForm()">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Message"></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2026 Dream Estate</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('navMenu').classList.toggle('active');
+        }
+
+        function submitForm() {
+            alert('Message sent successfully!');
+            return false;
+        }
+    </script>
+
+</body>
+
+</html>
